@@ -1,9 +1,10 @@
 class Blemees < Formula
   include Language::Python::Virtualenv
 
-  desc "Headless Agent daemon exposing `claude -p` over a Unix socket"
+  desc "Headless agent daemon exposing `claude -p` over a Unix socket"
   homepage "https://github.com/blemees/blemees-daemon"
   license "MIT"
+  revision 1
 
   url "https://github.com/blemees/blemees-daemon/archive/refs/tags/v0.5.0.tar.gz"
   sha256 "208c5ab171ec7b3bb4bb376827ccb6f9917b50e0adabb352dfa19cc1d84ce541"
@@ -17,11 +18,20 @@ class Blemees < Formula
   end
 
   # Default service definition so `brew services start blemees` works.
+  #
+  # LaunchAgents (and systemd --user) run with a minimal PATH that does
+  # not include the caller's shell paths. `claude` is commonly installed
+  # to `~/.local/bin/claude` by the standalone installer, so we extend
+  # PATH to find it without requiring extra setup. Users whose `claude`
+  # lives elsewhere can set BLEMEESD_CLAUDE to an absolute path via
+  # `launchctl setenv BLEMEESD_CLAUDE /full/path/to/claude` (macOS) or
+  # a systemd drop-in (Linux) before starting the service.
   service do
     run [opt_bin/"blemeesd"]
     keep_alive true
-    log_path   var/"log/blemees/blemeesd.log"
+    log_path       var/"log/blemees/blemeesd.log"
     error_log_path var/"log/blemees/blemeesd.err.log"
+    environment_variables PATH: "#{Dir.home}/.local/bin:#{Dir.home}/bin:#{HOMEBREW_PREFIX}/bin:/usr/bin:/bin:/usr/sbin:/sbin"
   end
 
   test do
