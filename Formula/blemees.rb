@@ -4,14 +4,16 @@ class Blemees < Formula
   desc "Headless agent daemon exposing `claude -p` over a Unix socket"
   homepage "https://github.com/blemees/blemees-daemon"
   license "MIT"
-  revision 1
+  revision 2
 
   url "https://github.com/blemees/blemees-daemon/archive/refs/tags/v0.6.0.tar.gz"
   sha256 "e80c0a50e06272e76419f79fa87bba45a38f5ed84d03a9fb6a0e04c53ae321b3"
   head "https://github.com/blemees/blemees-daemon.git", branch: "main"
 
   # Runtime: stdlib-only; we just need a working Python.
-  depends_on "python@3.12"
+  # Tracks the latest stable Python in Homebrew. CI exercises 3.11/3.12/3.13
+  # so the daemon itself runs fine on whichever interpreter the user has.
+  depends_on "python@3.13"
 
   def install
     virtualenv_install_with_resources
