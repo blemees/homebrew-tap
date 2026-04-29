@@ -6,8 +6,8 @@ class Blemees < Formula
   license "MIT"
   revision 2
 
-  url "https://github.com/blemees/blemees-daemon/archive/refs/tags/v0.8.0.tar.gz"
-  sha256 "8cf6e408b93d7a2fc1981a092b3eeded2ccdcfb5eeefea57bcbf6987574a41a2"
+  url "https://github.com/blemees/blemees-daemon/archive/refs/tags/v0.8.1.tar.gz"
+  sha256 "9d30af32316d602e02f1342c4c09e8b8eecbd2d1fadddb0e37d3aad029bb7f64"
   head "https://github.com/blemees/blemees-daemon.git", branch: "main"
 
   # Runtime: stdlib-only; we just need a working Python.
