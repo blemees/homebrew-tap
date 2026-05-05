@@ -5,8 +5,8 @@ class BlemeesAgent < Formula
   homepage "https://github.com/blemees/blemees-agent"
   license "MIT"
 
-  url "https://github.com/blemees/blemees-agent/archive/refs/tags/v0.10.0.tar.gz"
-  sha256 "d4612ce36cd8465537df51a9a1f70f86fb0a02145e593cf19a881dd2ab0a0bcc"
+  url "https://github.com/blemees/blemees-agent/archive/refs/tags/v0.10.1.tar.gz"
+  sha256 "e2f4d5f663573a3d58c60e992654b67bf8384cadf4fd849af3ab1f67fd408878"
   head "https://github.com/blemees/blemees-agent.git", branch: "main"
 
   # Runtime: stdlib-only; we just need a working Python.
