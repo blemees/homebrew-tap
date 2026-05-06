@@ -10,8 +10,8 @@ class BlemeesPeer < Formula
   # the URL points at a non-existent tag — `brew install` won't work
   # but the formula validates as Ruby and the bump-tap workflow can
   # rewrite both fields safely.
-  url "https://github.com/blemees/blemees-peer/archive/refs/tags/v0.0.0.tar.gz"
-  sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+  url "https://github.com/blemees/blemees-peer/archive/refs/tags/v0.1.0.tar.gz"
+  sha256 "ae182a74fa768c1b6f9e0b423e06268ee19fe086d6b386320cf522a92d1ca725"
   head "https://github.com/blemees/blemees-peer.git", branch: "main"
 
   # Stdlib-only daemon; needs a working Python. Tracks the latest
