@@ -10,8 +10,8 @@ class BlemeesContainer < Formula
   # release, the URL points at a non-existent tag — `brew install`
   # won't work but the formula validates as Ruby and the bump-tap
   # workflow can rewrite both fields safely.
-  url "https://github.com/blemees/blemees-container/archive/refs/tags/v0.0.0.tar.gz"
-  sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+  url "https://github.com/blemees/blemees-container/archive/refs/tags/v0.1.0.tar.gz"
+  sha256 "89a7e352c0f7dab39a51b39406a1867451e8836de642c868a40dbef9550efd81"
   head "https://github.com/blemees/blemees-container.git", branch: "main"
 
   # Stdlib-only CLI; needs a working Python. Tracks the latest stable
